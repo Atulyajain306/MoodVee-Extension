@@ -1,0 +1,257 @@
+* {
+    margin: 0;
+    padding: 0;
+    background-color: rgba(35, 34, 34, 0.825);
+    border: 0px solid transparent;
+    border-radius: 3px;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display:flex;
+    flex-direction:column;
+    width: 250px;
+    height: 350px;
+    justify-content: center;
+    align-items: center;
+}
+.mood{
+    display: flex;
+    margin-top: 10px;
+    font-size: xx-large;
+    font-family: 'Borel';
+    padding:0;
+    color: #ECECEC;
+    font-stretch:extra-expanded;
+}
+.img{
+    display: flex;
+    width: 200px;
+    height: 100px;
+    position: relative;
+    border: 1px solid transparent;
+    border-radius: 3px;  
+}
+
+.signup{
+    display: flex;
+    font-size:xx-large;
+    background-color: #05445E;
+    position: relative;
+    padding: 2px;
+    color: white;
+    padding-bottom: 4px;
+    width: 170px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 40px;
+    text-decoration: none;
+}
+
+.signup:hover{
+    background-color: #189AB4;
+}
+
+.signin{
+    display: flex;
+    font-size:xx-large;
+    background-color: #05445E;
+    position: relative;
+    padding: 2px;
+    color: white;
+    padding-bottom: 4px;
+    width: 170px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 40px;
+    text-decoration: none;
+}
+
+.signin:hover{
+    background-color: #189AB4;
+}
+
+.login{
+    display: flex;
+    font-size: xx-large;
+    padding: 5px;
+    font-family: "Instrument Sans";
+    color: #75E6DA;
+}
+.cover1{
+    display: flex;
+    gap: 5px;
+    size: 70;
+    padding-bottom: 10px;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #05445E;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+}
+.cover1:hover{
+    cursor: pointer;
+    background-color: #189AB4;
+}
+
+.cover2{
+    display: flex;
+    gap: 10px;
+    size: 70;
+    padding-top: 10px;
+    color: white;
+    background-color: #05445E;
+    position: relative;
+    padding-left: 10px;
+    padding-right: 10px;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;
+    border-bottom-left-radius: 20px; 
+    border-bottom-right-radius: 20px;
+}
+
+.cover2:hover{
+    cursor: pointer;
+    background-color: #189AB4;
+}
+.www{
+    padding-top: 30px;
+    font-size: xx-large;
+}
+.line{
+  color: white;
+  width: 212px;
+  overflow: hidden;
+  height: 1px;
+  background-color: white;  
+}
+::placeholder{
+    color: white;
+}
+.inp{
+    padding: 5px;
+    background-color: #05445E;
+    color: white;
+    font-size:medium;
+    width: 140px;
+
+}
+
+.icons{
+    size: 25;
+    background-color: transparent;
+}
+
+.ForwardArrow{
+    size: 5;
+    margin: 20px;
+    color: white;
+    background-color: #05445E;
+    position: relative;
+    left: 140px;
+    border-radius: 10px;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 40px;
+}
+.ForwardArrow:hover{
+    background-color: #189AB4;
+    cursor: pointer;
+}
+
+.SignupArrow{
+    size: 25;
+    color: white;
+    font-size: x-large;
+    background-color: #05445E;
+    position: relative;
+    border-radius: 10px;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 40px;
+}
+
+.SignupArrow:hover{
+    background-color: #189AB4;
+    cursor: pointer;
+}
+.q{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+}
+.SignupArrow2{
+    size: 25;
+    color: white;
+    margin-top: 10px;
+    font-size: x-large;
+    background-color: #05445E;
+    position: relative;
+    left: 90px;
+    border-radius: 10px;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 40px;
+}
+
+.SignupArrow2:hover{
+    background-color: #189AB4;
+    cursor: pointer;
+}
+.register{
+    color: #75E6DA;
+    font-size: xx-large;
+    
+}
+.cover3{
+    display: flex;
+    gap: 5px;
+    size: 70;
+    padding-bottom: 10px;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #05445E;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+}
+.cover3:hover{
+    cursor: pointer;
+    background-color: #189AB4;   
+}
+.cover4{
+   display: flex;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   gap: 5px;
+   background-color: #05445E; 
+   color: white;
+   justify-content: center;
+   align-items: center;
+   font-size: x-large;
+   padding-left: 10px;
+   padding-right: 10px;
+   border-top-left-radius: 20px;
+   border-top-right-radius: 20px;   
+}
