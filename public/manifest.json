@@ -3,9 +3,27 @@
     "name":"Chrome Extension",
     "description":"My First chrome extension Project",
     "version":"1.0",
+    "permissions": ["storage","activeTab"],
     "action":{
         "default_popup":"popup.html"
     },
+    "host_permissions": [
+        "<all_urls>"
+      ],
+    "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "content_security_policy": {
+    "script-src": [
+      "'self'",
+      "'unsafe-eval'",
+      "https://cdn.jsdelivr.net"
+    ],
+    "object-src": "'self'"
+  },
     "icons":{
         "32":"images/letter-m.png",
         "128":"images/letter-m.png"

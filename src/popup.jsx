@@ -11,8 +11,9 @@ import { MemoryRouter } from "react-router-dom";
 import Preferences from "./components/Preferences.jsx";
 import { useAuthContext } from "./context/Authcontext.jsx";
 import Language from "./components/Language.jsx";
+import Emotion from "./components/Emotion.jsx"
 function Popup(){
-    const {authUser,authpreference,authlang}=useAuthContext();
+    const {authUser,authpreference,authlang,authlogin}=useAuthContext();
     return (
         <div>
          <Routes>
@@ -22,6 +23,7 @@ function Popup(){
            <Route path="/preferences" element={ authpreference ? <Navigate to='/language' /> : <Preferences />} /> 
            <Route path="/language" element={ authlang ? <Navigate to="/middle" /> : <Language />} />
            <Route path="/middle" element={<Middle />} />
+           <Route path="/emotion" element={<Emotion />} />
          </Routes>
           
         </div>

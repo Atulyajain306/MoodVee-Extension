@@ -9,7 +9,8 @@ export const AuthContextProvider=({children})=>{
 const [authUser,setauthUser] = useState(null);
 const [authpreference, setauthpreference] = useState(null);
 const [authlang, setauthlang] = useState(null)
- return(<AuthContext.Provider value={{authUser,setauthUser,authpreference,setauthpreference,authlang,setauthlang}}>
+const [authlogin, setauthlogin] = useState(null)
+ return(<AuthContext.Provider value={{authUser,setauthUser,authpreference,setauthpreference,authlang,setauthlang,authlogin,setauthlogin}}>
             {children}
     </AuthContext.Provider>)
 };
