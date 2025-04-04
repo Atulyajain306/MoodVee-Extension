@@ -9,13 +9,20 @@ const Signup = () => {
   const [password, setpassword] = useState("");
   const {handlesignup}=HandleSign();
   const HandleSignup=()=>{
-       if(!password && !username){
-          return ;
+       if(!password || !username){
+          return toast.error("Enter all Credentials", {
+                        style: {
+                          background: "transparent",
+                          color:"red",
+                          boxShadow: "none", // Remove shadow if needed
+                          marginTop: "10px", 
+                        },
+                      });
        }
-       console.log(username,password);
+      else{  
        handlesignup({username,password});
        setpassword("");
-       setusername(""); 
+       setusername("");  }
   }
   return (
     <div className='container'>

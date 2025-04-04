@@ -9,10 +9,17 @@ const Language = () => {
         const {newlanguage}=Handlelanguage();
       const Handlelang=()=>{
            if(!language){
-            return
-           }
+            return toast.error("Enter Credentials", {
+                          style: {
+                            background: "transparent",
+                            color:"red",
+                            boxShadow: "none", // Remove shadow if needed
+                            marginTop: "10px", 
+                          },
+                        });
+           } else{
             newlanguage({language});
-            setlanguage("");
+            setlanguage(""); }
       }
   return (
     <div className='container'>

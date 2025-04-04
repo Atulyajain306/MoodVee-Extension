@@ -18,14 +18,16 @@ const Login = () => {
                 background: "transparent",
                 color:"red",
                 boxShadow: "none", // Remove shadow if needed
-                marginTop: "10px", // Adjust padding as needed
+                marginTop: "10px", 
               },
             });
              
          }
+       else{  
         signin({username,password});  
            setusername("");
            setpassword(""); 
+       } 
      }
      
   return (

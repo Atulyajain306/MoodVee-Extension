@@ -26,7 +26,14 @@ const HandleSign = () => {
              });   
         }
         catch(error){
-          console.log(error)
+         toast.error(error.message, {
+            style: {
+              background: "transparent",
+              color:"red",
+              boxShadow: "none", // Remove shadow if needed
+              marginTop: "10px", 
+            },
+          });
         }
      }
      return {handlesignup}

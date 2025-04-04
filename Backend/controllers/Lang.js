@@ -4,7 +4,6 @@ const Lang = async(req,res) => {
      try{
             let {language,name}=req.body;
             let user=await User.findOneAndUpdate({username:name},{language});
-            console.log(user);
             return res.status(201).json({"user": user});
      }catch(error){console.log(error)}
 }

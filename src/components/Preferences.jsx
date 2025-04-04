@@ -9,12 +9,19 @@ const Preferences = () => {
     const [gender, setgender] = useState("")
      const {Preference}=HandlePreferences();
     const HandlePref=()=>{
-        if(!age && !gender ){
-            return 
-        }
+        if(!age || !gender ){
+            return toast.error("Enter all Credentials", {
+              style: {
+                background: "transparent",
+                color:"red",
+                boxShadow: "none", // Remove shadow if needed
+                marginTop: "10px", 
+              },
+            }); 
+        } else{
         Preference({age,gender});
         setage("");
-        setgender("");
+        setgender(""); }
     }
   return (
     <div className='container'>
