@@ -1,8 +1,27 @@
 import React from 'react'
 import "./style.css"
+import { useEffect } from 'react'
+import { useAuthContext } from '../context/Authcontext'
 import { Link } from 'react-router-dom'
 const Home = () => {
-   
+         const {setauthlogin}=useAuthContext();
+    useEffect(() => {
+      chrome.storage.local.get(["authUser"], (result) => {
+        if (result.authUser) {
+          setauthlogin(true);  
+        } else {
+          setauthlogin(false);
+        }
+      });
+
+      chrome.storage.local.get(["moviedata"], (result) => {
+        if (result.moviedata) {
+          setauthlogin(true);
+        } else {
+          setauthlogin(false);
+        } 
+    });
+        }, []);
 
   return (
     <div className="container">

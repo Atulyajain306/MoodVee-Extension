@@ -1,22 +1,33 @@
 import React from 'react'
 import { FaUser } from "react-icons/fa6";
 import { IoIosLock } from "react-icons/io";
-import { MdOutlineArrowRightAlt } from "react-icons/md";
+import { MdOutlineArrowBack } from "react-icons/md";
+import { MdOutlineArrowForward } from "react-icons/md";
 import { useState } from 'react';
-import {Link} from "react-router-dom"
+import toast from "react-hot-toast"
 import HandleSignin from '../hooks/HandleSignin';
+import { Link } from 'react-router-dom';
 const Login = () => {
      const [username, setusername] = useState("");
      const [password, setpassword] = useState("");
       const {signin}=HandleSignin();
      const Handle=()=>{
-         if(!username && !password){
-             return ;
+         if(!username || !password){
+             return toast.error("Enter all Credentials", {
+              style: {
+                background: "transparent",
+                color:"red",
+                boxShadow: "none", // Remove shadow if needed
+                marginTop: "10px", // Adjust padding as needed
+              },
+            });
+             
          }
         signin({username,password});  
            setusername("");
            setpassword(""); 
      }
+     
   return (
     <div className='container'>
         <div className="mood">MoodVEE</div>
@@ -30,7 +41,8 @@ const Login = () => {
          <div className='cover2' ><IoIosLock className='icons' />
          <input type="password" className='inp' value={password} onChange={(e)=>{setpassword(e.target.value)}} placeholder='Password' />
          </div>
-       <Link to="/emotion">  <MdOutlineArrowRightAlt className='ForwardArrow' onClick={Handle} /></Link>
+         <MdOutlineArrowForward className='ForwardArrow' onClick={Handle} />
+        <Link to="/" className='Backward' > <MdOutlineArrowBack className='newlink' /></Link>
          </div>
          
     </div>

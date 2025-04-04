@@ -1,10 +1,10 @@
 * {
     margin: 0;
     padding: 0;
-    background-color: rgba(35, 34, 34, 0.825);
+    background-color: rgba(42, 40, 40, 0.825);
     border: 0px solid transparent;
     border-radius: 3px;
-}
+}  
 body {
     display: flex;
     justify-content: center;
@@ -320,3 +320,67 @@ button {
     background-color: #189AB4;
     padding: 5px; 
 } 
+.movie-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+
+}
+
+.RiMovieLine{
+    font-size:x-large;
+    color: white;
+}
+.name{
+    font-size:large;
+    padding: 5px;
+    color: #189AB4; 
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.name:hover{
+   color: #05445E;
+}
+.link{
+    color: #16aecc;
+    font-size: large;
+    
+}
+
+.movie-container{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Backward{
+   
+    size: 5;
+    margin: 20px;
+    color: white;
+    background-color: #05445E;
+    position: relative;
+    right: 140px;
+    padding-left: 5px;
+    padding-right: 15px;
+    border-radius: 40px;
+    text-decoration: none;
+    text-align: center;
+    bottom: 28px;
+    margin-left: 32px;
+}
+
+.Backward:hover{
+    background-color: #189AB4;
+    cursor: pointer;
+}
+
+.newlink{
+    text-decoration: none;
+    background: none;
+    position: relative;
+    top: 2px;
+}

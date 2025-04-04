@@ -1,4 +1,5 @@
 import { useAuthContext } from "../context/Authcontext";
+import toast from "react-hot-toast"
 const HandleSignin = () => {
       const {setauthlogin}=useAuthContext();
     const signin=async({username,password})=>{
@@ -6,18 +7,37 @@ const HandleSignin = () => {
              const res= await fetch("http://localhost:3000/api/signin",{
                 method:"POST",
                 headers:{"Content-Type":"application/json"},
-                body:JSON.stringify({username,password})
+                credentials: "include",
+                body:JSON.stringify({username,password}),
              });
              const data = await res.json();
                 if(data.error){
                     throw new Error(data.error);
                 }
-               setauthlogin(data); 
+                chrome.storage.local.set({ authUser: data }, function () {
+                    setauthlogin(data); 
+                  });
+                  toast.success("Login Succesfull", {
+                    style: {
+                      background: "transparent",
+                      color:"green",
+                      boxShadow: "none", // Remove shadow if needed
+                      marginTop: "10px", // Adjust padding as needed
+                    },
+                  });      
+              
 
         }
         catch(error)
         {
-            console.log(error)
+            toast.error(error.message, {
+                          style: {
+                            background: "transparent",
+                            color:"red",
+                            boxShadow: "none", // Remove shadow if needed
+                            marginTop: "10px", // Adjust padding as needed
+                          },
+                        });
 
         }
     }

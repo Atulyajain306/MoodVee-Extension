@@ -1,16 +1,34 @@
 import React, { useState, useEffect, useRef } from "react";
+import { BsArrowRight } from "react-icons/bs";
+import Movie from "./Movie";
 
 const Emotion = () => {
   const [status, setStatus] = useState("Initializing...");
   const [detectedEmotion, setDetectedEmotion] = useState("");
+  const [movie, setmovie] = useState(null);
+  const [loading, setloading] = useState(true);
   const videoRef = useRef(null);
   const intervalRef = useRef(null);
   const isFetching = useRef(false);
 
   useEffect(() => {
+    chrome.storage.local.get(["moviedata"], (result) => {
+      if (result.moviedata) {
+          setloading(false);
+          const r=result.moviedata
+          console.log(r);
+          setmovie(r);
+          if (videoRef.current && videoRef.current.srcObject) {
+            videoRef.current.srcObject.getTracks().forEach(track => track.stop());
+          } 
+      } else {
+           
+      } 
+  });     
+    let stream= null
     const startWebcam = async () => {
       try {
-        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+         stream = await navigator.mediaDevices.getUserMedia({ video: true });
         if (videoRef.current) {
           videoRef.current.srcObject = stream;
         }
@@ -27,7 +45,7 @@ const Emotion = () => {
   }, []);
 
   const startEmotionDetection = () => {
-    let duration = 15000; // Stop after 15 seconds
+    let duration = 10000; 
     let startTime = Date.now();
 
     intervalRef.current = setInterval(async () => {
@@ -60,20 +78,31 @@ const Emotion = () => {
         }
 
         const data = await response.json();
+         console.log(data)
         if (data.emotion) {
           setDetectedEmotion(data.emotion);
+          console.log(data.movies);
+          setmovie(data.movies);
         }
       } catch (error) {
         console.error("Error sending frame to API:", error);
       } finally {
         isFetching.current = false;
       }
-    }, 500);
+    }, 200);
   };
-
+   const Handlerec=()=>{
+        if(!detectedEmotion){
+          return ;
+        }
+        setloading(false);
+        if (videoRef.current && videoRef.current.srcObject) {
+          videoRef.current.srcObject.getTracks().forEach(track => track.stop());
+        }       
+   }
   return (
     <div className="container">
-      <div className="mood">MoodVEE</div>
+   {loading  ? <> <div className="mood">MoodVEE</div>
       <div id="webcam-container">
         <video ref={videoRef} id="video" autoPlay playsInline style={{ width: "100%" }} />
       </div>
@@ -81,6 +110,7 @@ const Emotion = () => {
       <div id="detected-emotion">
         <h3 id="detected">Detected Emotion: {detectedEmotion.toUpperCase()}</h3>
       </div>
+       <BsArrowRight className='SignupArrow2' onClick={Handlerec} /></> : < Movie movie={movie} />}   
     </div>
   );
 };
