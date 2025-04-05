@@ -21,7 +21,7 @@ body {
 }
 .mood{
     display: flex;
-    margin-top: 10px;
+    margin-top: 20px;
     font-size: xx-large;
     font-family: 'Borel';
     padding:0;
@@ -255,6 +255,34 @@ body {
    border-top-left-radius: 20px;
    border-top-right-radius: 20px;   
 }
+.cover5{
+    display: flex;
+    gap: 5px;
+    size: 70;
+    color: white;
+    padding-left: 10px;
+    background-color: #05445E;
+    position: relative;
+    align-items: center;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.cover6{
+    display: flex;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   gap: 5px;
+   background-color: #05445E; 
+   color: white;
+   justify-content: center;
+   align-items: center;
+   font-size: x-large;
+   padding-left: 10px;
+   padding-right: 10px;
+   border-top-left-radius: 20px;
+   border-top-right-radius: 20px;
+}
 
 button {
     background-color: #05445E;
@@ -384,3 +412,41 @@ button {
     position: relative;
     top: 2px;
 }
+
+.dropdown-container {
+    position: relative;
+    width: 200px;
+  }
+  
+  .dropdown-container select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: white;
+    font-size: 16px;
+    cursor: pointer;
+    appearance: none; /* Hide default arrow */
+  }
+  
+  .dropdown-container select:focus {
+    outline: none;
+    border-color: #5c80a7;
+  }
+  
+  /* Custom dropdown arrow */
+  .dropdown-container::after {
+    content: "▼";
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: #333;
+    pointer-events: none;
+  }
+  
+  .dropdown-container select option {
+    padding: 10px;
+  }
+  
