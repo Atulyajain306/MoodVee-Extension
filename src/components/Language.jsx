@@ -45,7 +45,7 @@ const Language = () => {
                             </div></div>
        <Link to="/preferences" onClick={Handleback} style={{position:"relative",right:"90px",bottom: "5px",
     fontSize: "30px"}} className='Backward' > <MdOutlineArrowBack className='newlink' /></Link> 
-           <div style={{bottom:"75px",alignItems:"center",paddingLeft:"15px",paddingRight:"15px",paddingTop:"0px",paddingBottom:"0px"}} className='SignupArrow2'  onClick={Handlelang} >  <BsArrowRight  style={{background:"none",padding:"0px"}}  /> </div>                       
+           <div style={{bottom:"74px",alignItems:"center",paddingLeft:"15px",paddingRight:"15px",paddingTop:"5px",paddingBottom:"5px"}} className='SignupArrow2'  onClick={Handlelang} >  <BsArrowRight  style={{background:"none",padding:"0px"}}  /> </div>                       
         </div>
     
   )

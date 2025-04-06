@@ -52,7 +52,7 @@ const Preferences = () => {
     </div></div>
     <Link to="/signup" style={{position:"relative",right:"90px",bottom: "5px",
     fontSize: "30px"}} onClick={Handleback} className='Backward' > <MdOutlineArrowBack className='newlink' /></Link>
-   <div style={{bottom:"75px",alignItems:"center",paddingLeft:"15px",paddingRight:"15px",paddingTop:"0px",paddingBottom:"0px"}} className='SignupArrow2'  onClick={HandlePref} >  <BsArrowRight  style={{background:"none",padding:"0px"}}  /> </div>   
+   <div style={{bottom:"74px",alignItems:"center",paddingLeft:"15px",paddingRight:"15px",paddingTop:"5px",paddingBottom:"5px"}} className='SignupArrow2'  onClick={HandlePref} >  <BsArrowRight  style={{background:"none",padding:"0px"}}  /> </div>   
     </div>
 
   )
