@@ -17,7 +17,7 @@ const Signup = () => {
                         style: {
                           background: "transparent",
                           color:"red",
-                          boxShadow: "none", // Remove shadow if needed
+                          boxShadow: "none", 
                           marginTop: "10px", 
                         },
                       });
@@ -36,7 +36,7 @@ const Signup = () => {
       <div className='cover4'>Enter Name</div>
       <div className='line'></div>
                <div className='cover3'>
-               <FaUser className='icons'  /> 
+               <FaUser className='icons'  />                       
  <input type="text" className='inp' value={username} onChange={(e)=>{setusername(e.target.value)}}  placeholder='Username' />
                </div>
                <div className='line'></div>

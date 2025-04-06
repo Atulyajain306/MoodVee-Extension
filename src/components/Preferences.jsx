@@ -7,10 +7,15 @@ import { MdOutlineArrowBack } from "react-icons/md";
 import { BsArrowRight } from "react-icons/bs";
 import { Link } from 'react-router-dom';
 import HandlePreferences from '../hooks/HandlePreferences';
+import { useAuthContext } from '../context/Authcontext';
 const Preferences = () => {
     const [age, setage] = useState("");
     const [gender, setgender] = useState("")
      const {Preference}=HandlePreferences();
+       const {setauthUser}=useAuthContext();
+      const Handleback=()=>{
+           setauthUser(null);
+      }
     const HandlePref=()=>{
         if(!age || !gender ){
             return toast.error("Enter all Credentials", {
@@ -46,7 +51,7 @@ const Preferences = () => {
       </select>
     </div></div>
     <Link to="/signup" style={{position:"relative",right:"90px",bottom: "5px",
-    fontSize: "30px"}}  className='Backward' > <MdOutlineArrowBack className='newlink' /></Link>
+    fontSize: "30px"}} onClick={Handleback} className='Backward' > <MdOutlineArrowBack className='newlink' /></Link>
    <div style={{bottom:"75px",alignItems:"center",paddingLeft:"15px",paddingRight:"15px",paddingTop:"0px",paddingBottom:"0px"}} className='SignupArrow2'  onClick={HandlePref} >  <BsArrowRight  style={{background:"none",padding:"0px"}}  /> </div>   
     </div>
 

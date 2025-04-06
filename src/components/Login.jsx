@@ -4,6 +4,7 @@ import { IoIosLock } from "react-icons/io";
 import { MdOutlineArrowBack } from "react-icons/md";
 import { MdOutlineArrowForward } from "react-icons/md";
 import { useState } from 'react';
+import { useAuthContext } from '../context/Authcontext';
 import toast from "react-hot-toast"
 import HandleSignin from '../hooks/HandleSignin';
 import { Link } from 'react-router-dom';
@@ -11,6 +12,7 @@ const Login = () => {
      const [username, setusername] = useState("");
      const [password, setpassword] = useState("");
       const {signin}=HandleSignin();
+      const {newstate}=useAuthContext();
      const Handle=()=>{
          if(!username || !password){
              return toast.error("Enter all Credentials", {
@@ -44,7 +46,7 @@ const Login = () => {
          <input type="password" className='inp' value={password} onChange={(e)=>{setpassword(e.target.value)}} placeholder='Password' />
          </div>
          <MdOutlineArrowForward className='ForwardArrow' onClick={Handle} />
-        <Link to="/" className='Backward' > <MdOutlineArrowBack className='newlink' /></Link>
+        <Link to={ newstate ? "/middle" :"/"} className='Backward' > <MdOutlineArrowBack className='newlink' /></Link>
          </div>
          
     </div>

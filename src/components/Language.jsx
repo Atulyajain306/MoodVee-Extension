@@ -6,10 +6,12 @@ import { MdOutlineArrowBack } from "react-icons/md";
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import toast from "react-hot-toast"
+import { useAuthContext } from '../context/Authcontext';
 import Handlelanguage from '../hooks/Handlelanguage';
 const Language = () => {
       const [language, setlanguage] = useState("");
         const {newlanguage}=Handlelanguage();
+        const {setauthpreference}=useAuthContext();
       const Handlelang=()=>{
            if(!language){
             return toast.error("Enter Credentials", {
@@ -24,6 +26,10 @@ const Language = () => {
             newlanguage({language});
             setlanguage(""); }
       }
+     const Handleback=()=>{
+            setauthpreference(null);
+     }
+
   return (
     <div className='container'>
              <div style={{marginTop:"50px"}} className="mood">MoodVEE</div>
@@ -37,7 +43,7 @@ const Language = () => {
                   <div className='cover2' ><MdOutlineCheckBoxOutlineBlank  className='icons' />
               <input type="text" className='inp' value={language} onChange={(e)=>{setlanguage(e.target.value)}}  placeholder='Select' />
                             </div></div>
-       <Link to="/preferences" style={{position:"relative",right:"90px",bottom: "5px",
+       <Link to="/preferences" onClick={Handleback} style={{position:"relative",right:"90px",bottom: "5px",
     fontSize: "30px"}} className='Backward' > <MdOutlineArrowBack className='newlink' /></Link> 
            <div style={{bottom:"75px",alignItems:"center",paddingLeft:"15px",paddingRight:"15px",paddingTop:"0px",paddingBottom:"0px"}} className='SignupArrow2'  onClick={Handlelang} >  <BsArrowRight  style={{background:"none",padding:"0px"}}  /> </div>                       
         </div>

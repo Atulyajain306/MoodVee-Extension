@@ -1,5 +1,4 @@
 import React from "react";
-import { useEffect } from "react";
 import ReactDOM from "react-dom/client"; 
 import Home from "./components/Home";
 import Login from "./components/Login";
@@ -19,13 +18,13 @@ function Popup(){
     return (
         <div>
          <Routes>
-            <Route path="/" element={ authlogin ? <Navigate to="/emotion" /> : <Home />} />
-           <Route path="/signup" element={ authUser ? <Navigate to="/preferences" /> : <Signup />} />
-           <Route path="/signin" element={ authlogin ? <Navigate to="/emotion" /> : <Login />} />
-           <Route path="/preferences" element={ authpreference ? <Navigate to='/language' /> : <Preferences />} /> 
-           <Route path="/language" element={ authlang ? <Navigate to="/middle" /> : <Language />} />
-           <Route path="/middle" element={<Middle />} />
-           <Route path="/emotion" element={<Emotion />} />
+          <Route path="/" element={ authlogin ? <Navigate to="/emotion" /> : <Home />} />
+          <Route path="/signup" element={ authUser ? <Navigate to="/preferences" /> : <Signup />} />
+          <Route path="/signin" element={ authlogin ? <Navigate to="/emotion" /> : <Login />} />
+          <Route path="/preferences" element={ authpreference ? <Navigate to='/language' /> : <Preferences />} /> 
+          <Route path="/language" element={ authlang ? <Navigate to="/middle" /> : <Language />} />
+          <Route path="/middle" element={<Middle />} />
+          <Route path="/emotion" element={<Emotion />} />
          </Routes>
           
         </div>

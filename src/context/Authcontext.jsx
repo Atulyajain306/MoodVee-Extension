@@ -8,9 +8,10 @@ export const useAuthContext = () => {
 export const AuthContextProvider=({children})=>{
 const [authUser,setauthUser] = useState(null);
 const [authpreference, setauthpreference] = useState(null);
-const [authlang, setauthlang] = useState(null)
-const [authlogin, setauthlogin] = useState(null)
- return(<AuthContext.Provider value={{authUser,setauthUser,authpreference,setauthpreference,authlang,setauthlang,authlogin,setauthlogin}}>
+const [authlang, setauthlang] = useState(null);
+const [authlogin, setauthlogin] = useState(null);
+const [newstate, setnewstate] = useState(false);
+ return(<AuthContext.Provider value={{authUser,setauthUser,authpreference,setauthpreference,authlang,setauthlang,authlogin,setauthlogin,newstate,setnewstate}}>
             {children}
     </AuthContext.Provider>)
 };

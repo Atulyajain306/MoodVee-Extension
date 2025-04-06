@@ -4,8 +4,9 @@ import { useEffect } from 'react'
 import { useAuthContext } from '../context/Authcontext'
 import { Link } from 'react-router-dom'
 const Home = () => {
-         const {setauthlogin}=useAuthContext();
+         const {setauthlogin,setnewstate}=useAuthContext();
     useEffect(() => {
+        setnewstate(false); 
       chrome.storage.local.get(["authUser"], (result) => {
         if (result.authUser) {
           setauthlogin(true);  
