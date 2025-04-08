@@ -33,8 +33,8 @@ const Login = () => {
      }
      
   return (
-    <div className='container'>
-        <div className="mood">MoodVEE</div>
+    <div style={{overflow:"hidden"}} className='container'>
+        <div className="mood" style={{marginTop:"50px"}} >MoodVEE</div>
          <div className='login'>Login</div>
          <div className='www'>
          <div className='cover1'>
@@ -45,8 +45,10 @@ const Login = () => {
          <div className='cover2' ><IoIosLock className='icons' />
          <input type="password" className='inp' value={password} onChange={(e)=>{setpassword(e.target.value)}} placeholder='Password' />
          </div>
+         <Link to="/password" style={{fontSize:"12px",color:"red",padding:"0px",position:"relative",bottom:"20px"}} >Forgot Password?</Link> 
+         <div style={{position:"relative",bottom:"25px"}}>
          <MdOutlineArrowForward className='ForwardArrow' onClick={Handle} />
-        <Link to={ newstate ? "/middle" :"/"} className='Backward' > <MdOutlineArrowBack className='newlink' /></Link>
+        <Link to={ newstate ? "/middle" :"/"} className='Backward' > <MdOutlineArrowBack className='newlink' /></Link></div>
          </div>
          
     </div>

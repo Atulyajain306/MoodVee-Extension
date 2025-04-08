@@ -13,6 +13,7 @@ import Language from "./components/Language.jsx";
 import Emotion from "./components/Emotion.jsx"
 import Movie from "./components/Movie.jsx";
 import { Toaster } from "react-hot-toast";
+import Password from "./components/Password.jsx";
 function Popup(){
     const {authUser,authpreference,authlang,authlogin}=useAuthContext();
     return (
@@ -25,6 +26,8 @@ function Popup(){
           <Route path="/language" element={ authlang ? <Navigate to="/middle" /> : <Language />} />
           <Route path="/middle" element={<Middle />} />
           <Route path="/emotion" element={<Emotion />} />
+          <Route path="/movies" element={<Movie />} />
+          <Route path="/password" element={<Password />} />
          </Routes>
           
         </div>

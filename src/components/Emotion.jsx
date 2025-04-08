@@ -4,31 +4,38 @@ import { IoIosRefresh } from "react-icons/io";
 import { TbLogout } from "react-icons/tb";
 import Movie from "./Movie";
 import toast from "react-hot-toast"
-
+import { useNavigate } from "react-router-dom";
+import { useAuthContext } from "../context/Authcontext";
 const Emotion = () => {
   const [status, setStatus] = useState("Initializing...");
   const [detectedEmotion, setDetectedEmotion] = useState("");
   const [movie, setmovie] = useState(null);
+    const Navigate=useNavigate();
   const [loading, setloading] = useState(true);
-
+  const {setauthlogin}=useAuthContext();
   const videoRef = useRef(null);
   const intervalRef = useRef(null);
   const isFetching = useRef(false);
   const streamRef = useRef(null); // To manage the webcam stream
 
+  
   useEffect(() => {
+    const handleUnload = () => {
+      console.log("Popup is closing. Stopping webcam...");
+      stopWebcam();
+    };
     chrome.storage.local.get(["moviedata"], (result) => {
       if (result.moviedata) {
         setloading(false);
         setmovie(result.moviedata);
-        stopWebcam();
       }
     });
 
     startWebcam();
-
+    window.addEventListener("beforeunload", handleUnload);
     return () => {
       stopWebcam();
+      window.removeEventListener("beforeunload", handleUnload);
     };
   }, []);
 
@@ -36,8 +43,13 @@ const Emotion = () => {
     clearInterval(intervalRef.current);
     if (streamRef.current) {
       streamRef.current.getTracks().forEach(track => track.stop());
+      streamRef.current = null;
+    }
+    if (videoRef.current) {
+      videoRef.current.srcObject = null;
     }
   };
+  
 
   const startWebcam = async () => {
     try {
@@ -122,7 +134,13 @@ const Emotion = () => {
     setStatus("Reinitializing...");
     startWebcam();
   };
-
+  
+  const Handlelogout=()=>{
+    chrome.storage.local.remove("authUser", () => {
+      setauthlogin(false);
+     });
+     Navigate("/signin");
+  }
   return (
     <div className="container">
       {loading ? (
@@ -137,7 +155,7 @@ const Emotion = () => {
           </div>
           <div style={{alignItems:"center"}} className="actions">
        <BsArrowRight style={{left:"120px"}} className="SignupArrow2" onClick={Handlerec} />
-       <button className="logout"><TbLogout style={{background: "none",fontSize: "larger"}} /></button>
+       <button className="logout" onClick={Handlelogout} ><TbLogout style={{background: "none",fontSize: "larger"}} /></button>
        <button onClick={handleRefresh} style={{ position:"relative", right:"35px",bottom:"10px",paddingLeft:"5px",paddingRight:"5px" }}><IoIosRefresh style={{background:"none",fontSize:"larger"}} /></button>
           </div>
         </>

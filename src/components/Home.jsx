@@ -2,26 +2,29 @@ import React from 'react'
 import "./style.css"
 import { useEffect } from 'react'
 import { useAuthContext } from '../context/Authcontext'
-import { Link } from 'react-router-dom'
+import { Link,useNavigate } from 'react-router-dom'
 const Home = () => {
          const {setauthlogin,setnewstate}=useAuthContext();
+         const Navigate=useNavigate();
     useEffect(() => {
         setnewstate(false); 
+        chrome.storage.local.get(["moviedata"], (result) => {
+          if (result.moviedata) {
+            setauthlogin(true);
+            Navigate("/movies");
+          } else {
+            setauthlogin(false);
+          } 
+      });  
       chrome.storage.local.get(["authUser"], (result) => {
         if (result.authUser) {
           setauthlogin(true);  
+          Navigate("/emotion");
         } else {
           setauthlogin(false);
         }
       });
 
-      chrome.storage.local.get(["moviedata"], (result) => {
-        if (result.moviedata) {
-          setauthlogin(true);
-        } else {
-          setauthlogin(false);
-        } 
-    });
         }, []);
 
   return (
