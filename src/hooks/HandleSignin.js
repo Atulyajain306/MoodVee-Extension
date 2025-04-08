@@ -17,6 +17,7 @@ const HandleSignin = () => {
                 chrome.storage.local.set({ authUser: data }, function () {
                     setauthlogin(data); 
                   });
+                  localStorage.setItem("item", JSON.stringify(data)); 
                   toast.success("Login Succesfull", {
                     style: {
                       background: "transparent",

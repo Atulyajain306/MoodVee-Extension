@@ -45,7 +45,7 @@ const Login = () => {
          <div className='cover2' ><IoIosLock className='icons' />
          <input type="password" className='inp' value={password} onChange={(e)=>{setpassword(e.target.value)}} placeholder='Password' />
          </div>
-         <Link to="/password" style={{fontSize:"12px",color:"red",padding:"0px",position:"relative",bottom:"20px"}} >Forgot Password?</Link> 
+         <Link to="/password" style={{fontSize:"12px",color:"#F7374F",padding:"0px",position:"relative",bottom:"20px"}} >Forget Password?</Link> 
          <div style={{position:"relative",bottom:"25px"}}>
          <MdOutlineArrowForward className='ForwardArrow' onClick={Handle} />
         <Link to={ newstate ? "/middle" :"/"} className='Backward' > <MdOutlineArrowBack className='newlink' /></Link></div>

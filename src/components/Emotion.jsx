@@ -123,7 +123,9 @@ const Emotion = () => {
 
     }else{
     setloading(false);
-    stopWebcam(); }
+    stopWebcam();
+    Navigate("/movies")
+   }
   };
 
   const handleRefresh = () => {
@@ -136,6 +138,7 @@ const Emotion = () => {
   };
   
   const Handlelogout=()=>{
+    localStorage.removeItem("item");
     chrome.storage.local.remove("authUser", () => {
       setauthlogin(false);
      });
@@ -152,12 +155,15 @@ const Emotion = () => {
           <div id="status">{status}</div>
           <div id="detected-emotion">
             <h3 id="detected">Detected Emotion: {detectedEmotion.toUpperCase()}</h3>
-          </div>
+          </div> 
           <div style={{alignItems:"center"}} className="actions">
        <BsArrowRight style={{left:"120px"}} className="SignupArrow2" onClick={Handlerec} />
        <button className="logout" onClick={Handlelogout} ><TbLogout style={{background: "none",fontSize: "larger"}} /></button>
-       <button onClick={handleRefresh} style={{ position:"relative", right:"35px",bottom:"10px",paddingLeft:"5px",paddingRight:"5px" }}><IoIosRefresh style={{background:"none",fontSize:"larger"}} /></button>
+       <button onClick={handleRefresh} style={{ position:"relative", right:"40px",bottom:"10px",paddingLeft:"5px",paddingRight:"5px" }}><IoIosRefresh style={{background:"none",fontSize:"larger"}} /></button>
           </div>
+          <div style={{color:"#F7374F",position:"relative",fontStyle:"italic",right:"90px",bottom:"14px"}} >Logout</div>
+          <div style={{color:"#F7374F",fontStyle:"italic",bottom:"29px",position:"relative"}} >Refresh</div>
+
         </>
       ) : (
         <Movie movie={movie} />

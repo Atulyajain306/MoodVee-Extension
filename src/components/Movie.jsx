@@ -4,6 +4,7 @@ import { FaArrowRight } from "react-icons/fa";
 import { TbLogout } from "react-icons/tb";
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import { MdOutlineArrowBack } from "react-icons/md";
 import { useAuthContext } from '../context/Authcontext';
 import { useEffect } from 'react';
 const Movie = ({movie}) => { 
@@ -26,14 +27,26 @@ const Movie = ({movie}) => {
                   
     }, []);
      const Handlelogout=()=>{
+       localStorage.removeItem("item");
       chrome.storage.local.remove("moviedata", () => {
         setauthlogin(false);
        });
        Navigate("/signin");
      }
+ 
+     const Handleback=()=>{
+      chrome.storage.local.remove("moviedata", () => {
+       });
+        let data= JSON.parse(localStorage.getItem("item"));
+       chrome.storage.local.set({ authUser:data }, function () {
+        setauthlogin(true); 
+      }); 
+      Navigate("/emotion") 
+     }
+
  return (
-  <div className="movie-container" onClick={(e) => e.stopPropagation()}>
-  <div className="mood">MoodVEE</div>
+  <div  className="container" onClick={(e) => e.stopPropagation()}>
+  <div className="mood" style={{marginTop:"70px"}}>MoodVEE</div>
   <div className="register" style={{ fontSize: "x-large" }}>Recommendations</div>
 
   {Array.isArray(movie) && movie.length > 0 ? (
@@ -73,14 +86,16 @@ const Movie = ({movie}) => {
   ) : (
     <p className="no-movies">No movies found</p>
   )}
-
+  <div  style={{position:"relative",right:"90px",bottom: "5px",
+  fontSize: "30px"}} className='Backward' onClick={Handleback} > <MdOutlineArrowBack className='newlink' /></div> 
   <button
     className="logout"
-    style={{ position: "relative", bottom: "1px" }}
+    style={{ position: "relative", bottom: "65px",left:"90px" }}
     onClick={Handlelogout}
   >
     <TbLogout style={{ background: "none", fontSize: "larger" }} />
   </button>
+  <div style={{color:"#F7374F",position:"relative",fontStyle:"italic",left:"89px",bottom:"69px"}} >Logout</div>
 </div>
 
  );
