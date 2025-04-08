@@ -1,7 +1,7 @@
 import React from 'react'
 import { IoIosSearch } from "react-icons/io";
 import { MdOutlineCheckBoxOutlineBlank } from "react-icons/md";
-import { BsArrowRight } from "react-icons/bs";
+import { MdOutlineCheckBox } from "react-icons/md";
 import { MdOutlineArrowForward } from "react-icons/md";
 import { MdOutlineArrowBack } from "react-icons/md";
 import { useState } from 'react';
@@ -41,8 +41,13 @@ const Language = () => {
                  <div className='cover6'>Search</div>
                             </div>
                             <div className='line'></div>
-                  <div className='cover2' ><MdOutlineCheckBoxOutlineBlank  className='icons' />
-              <input type="text" className='inp' value={language} onChange={(e)=>{setlanguage(e.target.value)}}  placeholder='Select' />
+                  <div className='cover2' >{ language ? <MdOutlineCheckBox className='icons' /> :<MdOutlineCheckBoxOutlineBlank  className='icons' />}
+             <select className='inp' value={language} onChange={(e)=>{setlanguage(e.target.value)}}>
+           <option className='inp' value="" >Language</option>
+           <option className='inp' value="English" >English</option>
+           <option className='inp' value="Hindi">Hindi</option>
+           <option className='inp' value="Kannada">Kannada</option>
+      </select>
                             </div></div>
        <Link to="/preferences" onClick={Handleback} style={{position:"relative",right:"90px",bottom: "5px",
     fontSize: "30px"}} className='Backward' > <MdOutlineArrowBack className='newlink' /></Link> 

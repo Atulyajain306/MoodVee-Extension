@@ -43,6 +43,7 @@ const Signup = () => {
                <div className='cover7'  ><IoIosLock className='icons' />
  <input type="password" className='inp' style={{backgroundColor:"#632E55"}} value={password} onChange={(e)=>{setpassword(e.target.value)}}  placeholder='Password' />
                </div>
+          <div style={{fontSize:"x-small",color:"#F7374F",fontStyle:"italic",fontWeight:"bold"}}>By Signup You confirm to being an Adult!</div>     
                </div>
     <Link to="/" className='Backward' style={{position:"relative",right:"90px",bottom: "5px",
     fontSize: "30px"}} >< MdOutlineArrowBack className='newlink' /></Link>    

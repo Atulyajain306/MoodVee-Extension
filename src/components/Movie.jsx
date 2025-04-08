@@ -7,6 +7,7 @@ import { useState } from 'react';
 import { MdOutlineArrowBack } from "react-icons/md";
 import { useAuthContext } from '../context/Authcontext';
 import { useEffect } from 'react';
+import "./style.css"
 const Movie = ({movie}) => { 
        const {setauthlogin}=useAuthContext();
        const [newmovies, setnewmovies] = useState()
@@ -47,10 +48,10 @@ const Movie = ({movie}) => {
  return (
   <div  className="container" onClick={(e) => e.stopPropagation()}>
   <div className="mood" style={{marginTop:"70px"}}>MoodVEE</div>
-  <div className="register" style={{ fontSize: "x-large" }}>Recommendations</div>
+  <div className="register" style={{ fontSize: "x-large",marginBottom:"5px" }}>Recommendations</div>
 
   {Array.isArray(movie) && movie.length > 0 ? (
-    <div className="movie-list">
+    <div  className="movie-list">
       {movie.map((mv, idx) => (
         <div key={idx} className="movie-item">
           <RiMovieLine className="RiMovieLine" style={{ color: "#632E55" }} />
@@ -67,7 +68,7 @@ const Movie = ({movie}) => {
       ))}
     </div>
   ) : Array.isArray(newmovies) && newmovies.length > 0 ? (
-    <div className="movie-list">
+    <div  className="movie-list">
       {newmovies.map((mv, idx) => (
         <div key={idx} className="movie-item">
           <RiMovieLine className="RiMovieLine" style={{ color: "#632E55" }} />
