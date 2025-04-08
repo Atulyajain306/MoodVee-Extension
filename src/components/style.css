@@ -40,7 +40,7 @@ body {
 .signup{
     display: flex;
     font-size:xx-large;
-    background-color: #05445E;
+    background-color: #632E55;
     position: relative;
     padding: 2px;
     color: white;
@@ -55,13 +55,13 @@ body {
 }
 
 .signup:hover{
-    background-color: #189AB4;
+    background-color: #F7374F;
 }
 
 .signin{
     display: flex;
     font-size:xx-large;
-    background-color: #05445E;
+    background-color: #632E55;
     position: relative;
     padding: 2px;
     color: white;
@@ -76,7 +76,7 @@ body {
 }
 
 .signin:hover{
-    background-color: #189AB4;
+    background-color: #F7374F;
 }
 
 .login{
@@ -84,7 +84,7 @@ body {
     font-size: xx-large;
     padding: 5px;
     font-family: "Instrument Sans";
-    color: #75E6DA;
+    color: #F7374F;
 }
 .cover1{
     display: flex;
@@ -94,7 +94,7 @@ body {
     color: white;
     padding-left: 10px;
     padding-right: 10px;
-    background-color: #05445E;
+    background-color: #F7374F;
     position: relative;
     align-items: center;
     justify-content: center;
@@ -105,7 +105,7 @@ body {
 }
 .cover1:hover{
     cursor: pointer;
-    background-color: #189AB4;
+    background-color: #632E55;
 }
 
 .cover2{
@@ -114,7 +114,7 @@ body {
     size: 70;
     padding-top: 10px;
     color: white;
-    background-color: #05445E;
+    background-color: #F7374F;
     position: relative;
     padding-left: 10px;
     padding-right: 10px;
@@ -127,7 +127,28 @@ body {
 
 .cover2:hover{
     cursor: pointer;
-    background-color: #189AB4;
+    background-color: #632E55;
+}
+.cover7{
+    display: flex;
+    gap: 10px;
+    size: 70;
+    padding-top: 10px;
+    color: white;
+    background-color: #632E55;
+    position: relative;
+    padding-left: 10px;
+    padding-right: 10px;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;
+    border-bottom-left-radius: 20px; 
+    border-bottom-right-radius: 20px;
+}
+
+.cover7:hover{
+    cursor: pointer;
+    background-color: #F7374F;
 }
 .www{
     padding-top: 30px;
@@ -145,7 +166,7 @@ body {
 }
 .inp{
     padding: 5px;
-    background-color: #05445E;
+    background-color: #F7374F;
     color: white;
     font-size:medium;
     width: 140px;
@@ -161,7 +182,7 @@ body {
     size: 5;
     margin: 20px;
     color: white;
-    background-color: #05445E;
+    background-color: #632E55;
     position: relative;
     left: 140px;
     border-radius: 10px;
@@ -171,7 +192,7 @@ body {
     border-radius: 40px;
 }
 .ForwardArrow:hover{
-    background-color: #189AB4;
+    background-color: #F7374F;
     cursor: pointer;
 }
 
@@ -179,7 +200,7 @@ body {
     size: 25;
     color: white;
     font-size: x-large;
-    background-color: #05445E;
+    background-color: #F7374F;
     position: relative;
     border-radius: 10px;
     padding: 5px;
@@ -189,7 +210,7 @@ body {
 }
 
 .SignupArrow:hover{
-    background-color: #189AB4;
+    background-color: #632E55;
     cursor: pointer;
 }
 .q{
@@ -203,7 +224,7 @@ body {
     color: white;
     margin-top: 10px;
     font-size: x-large;
-    background-color: #05445E;
+    background-color: #632E55;
     position: relative;
     left: 90px;
     border-radius: 10px;
@@ -214,11 +235,11 @@ body {
 }
 
 .SignupArrow2:hover{
-    background-color: #189AB4;
+    background-color: #F7374F;
     cursor: pointer;
 }
 .register{
-    color: #75E6DA;
+    color: #F7374F;
     font-size: xx-large;
     
 }
@@ -230,7 +251,7 @@ body {
     color: white;
     padding-left: 10px;
     padding-right: 10px;
-    background-color: #05445E;
+    background-color: #632E55;
     position: relative;
     align-items: center;
     justify-content: center;
@@ -238,14 +259,14 @@ body {
 }
 .cover3:hover{
     cursor: pointer;
-    background-color: #189AB4;   
+    background-color: #F7374F;   
 }
 .cover4{
    display: flex;
    padding-top: 10px;
    padding-bottom: 10px;
    gap: 5px;
-   background-color: #05445E; 
+   background-color: #632E55; 
    color: white;
    justify-content: center;
    align-items: center;
@@ -261,7 +282,7 @@ body {
     size: 70;
     color: white;
     padding-left: 10px;
-    background-color: #05445E;
+    background-color: #F7374F;
     position: relative;
     align-items: center;
     border-top-left-radius: 20px;
@@ -273,7 +294,7 @@ body {
    padding-top: 10px;
    padding-bottom: 10px;
    gap: 5px;
-   background-color: #05445E; 
+   background-color: #F7374F; 
    color: white;
    justify-content: center;
    align-items: center;
@@ -285,7 +306,7 @@ body {
 }
 
 button {
-    background-color: #05445E;
+    background-color: #632E55;
     color: white;
     font-size:medium;
     border: none;
@@ -295,11 +316,11 @@ button {
     margin: 5px 0;
   }
   button:hover {
-    background-color: #189AB4;
+    background-color: #F7374F;
   }
   #status {
     margin: 5px;
-    color: #189AB4;
+    color: #F7374F;
     font-style: italic;
     background-color: none;
   }
@@ -345,7 +366,7 @@ button {
  #detected{
     display: flex;
     color: white;
-    background-color: #189AB4;
+    background-color: #F7374F;
     padding: 5px; 
 } 
 .movie-item{
@@ -363,16 +384,16 @@ button {
 .name{
     font-size:large;
     padding: 5px;
-    color: #189AB4; 
+    color: #F7374F; 
     padding-left: 10px;
     padding-right: 10px;
 }
 
 .name:hover{
-   color: #05445E;
+   color: #F7374F;
 }
 .link{
-    color: #16aecc;
+    color: #F7374F;
     font-size: large;
     
 }
@@ -389,7 +410,7 @@ button {
     size: 5;
     margin: 20px;
     color: white;
-    background-color: #05445E;
+    background-color: #632E55;
     position: relative;
     right: 140px;
     padding-left: 5px;
@@ -402,7 +423,7 @@ button {
 }
 
 .Backward:hover{
-    background-color: #189AB4;
+    background-color: #F7374F;
     cursor: pointer;
 }
 
@@ -448,4 +469,10 @@ button {
   
   .dropdown-container select option {
     padding: 10px;
+  }
+  .logout{
+    position: relative;
+    right: 100px;
+    bottom: 10px;
+    padding: 5px;
   }

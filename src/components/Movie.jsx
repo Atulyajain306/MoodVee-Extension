@@ -25,7 +25,7 @@ const Movie = ({movie}) => {
         <div className="movie-list">
           {movie.map((mv, idx) => (
             <div key={idx} className="movie-item">
-              <RiMovieLine className="RiMovieLine" />
+              <RiMovieLine className="RiMovieLine" style={{color:"#632E55"}} />
               <div className="name">{mv.name}</div>
               <a 
                 href={mv.link} 
@@ -33,7 +33,7 @@ const Movie = ({movie}) => {
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()} // Prevents closing popup if inside a modal
               >
-                <FaArrowRight className="link" />
+                <FaArrowRight style={{color:"white"}} className="link" />
               </a>
             </div>
           ))}

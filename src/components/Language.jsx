@@ -2,6 +2,7 @@ import React from 'react'
 import { IoIosSearch } from "react-icons/io";
 import { MdOutlineCheckBoxOutlineBlank } from "react-icons/md";
 import { BsArrowRight } from "react-icons/bs";
+import { MdOutlineArrowForward } from "react-icons/md";
 import { MdOutlineArrowBack } from "react-icons/md";
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -45,7 +46,7 @@ const Language = () => {
                             </div></div>
        <Link to="/preferences" onClick={Handleback} style={{position:"relative",right:"90px",bottom: "5px",
     fontSize: "30px"}} className='Backward' > <MdOutlineArrowBack className='newlink' /></Link> 
-           <div style={{bottom:"74px",alignItems:"center",paddingLeft:"15px",paddingRight:"15px",paddingTop:"5px",paddingBottom:"5px"}} className='SignupArrow2'  onClick={Handlelang} >  <BsArrowRight  style={{background:"none",padding:"0px"}}  /> </div>                       
+           <div style={{bottom:"74px",alignItems:"center",paddingLeft:"15px",paddingRight:"5px",paddingTop:"1px",paddingBottom:"1px",left:"84px"}} className='SignupArrow2'  onClick={Handlelang} >  <MdOutlineArrowForward style={{background:"none",padding:"0px",fontSize:"xx-large"}} className='newlink'  /> </div>                       
         </div>
     
   )

@@ -37,11 +37,11 @@ const Signup = () => {
       <div className='line'></div>
                <div className='cover3'>
                <FaUser className='icons'  />                       
- <input type="text" className='inp' value={username} onChange={(e)=>{setusername(e.target.value)}}  placeholder='Username' />
+ <input type="text" className='inp' style={{backgroundColor:"#632E55"}} value={username} onChange={(e)=>{setusername(e.target.value)}}  placeholder='Username' />
                </div>
                <div className='line'></div>
-               <div className='cover2' ><IoIosLock className='icons' />
- <input type="password" className='inp' value={password} onChange={(e)=>{setpassword(e.target.value)}}  placeholder='Password' />
+               <div className='cover7'  ><IoIosLock className='icons' />
+ <input type="password" className='inp' style={{backgroundColor:"#632E55"}} value={password} onChange={(e)=>{setpassword(e.target.value)}}  placeholder='Password' />
                </div>
                </div>
     <Link to="/" className='Backward' style={{position:"relative",right:"90px",bottom: "5px",

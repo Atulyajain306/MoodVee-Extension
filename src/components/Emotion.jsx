@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import { BsArrowRight } from "react-icons/bs";
 import { IoIosRefresh } from "react-icons/io";
+import { TbLogout } from "react-icons/tb";
 import Movie from "./Movie";
+import toast from "react-hot-toast"
 
 const Emotion = () => {
   const [status, setStatus] = useState("Initializing...");
@@ -97,9 +99,19 @@ const Emotion = () => {
   };
 
   const Handlerec = () => {
-    if (!detectedEmotion) return;
+    if (!detectedEmotion) {
+      return toast.error("No Emotion Detected", {
+        style: {
+          background: "transparent",
+          color:"red",
+          boxShadow: "none", 
+          marginTop: "10px", 
+        },
+      });
+
+    }else{
     setloading(false);
-    stopWebcam();
+    stopWebcam(); }
   };
 
   const handleRefresh = () => {
@@ -124,8 +136,9 @@ const Emotion = () => {
             <h3 id="detected">Detected Emotion: {detectedEmotion.toUpperCase()}</h3>
           </div>
           <div style={{alignItems:"center"}} className="actions">
-       <BsArrowRight style={{left:"100px"}} className="SignupArrow2" onClick={Handlerec} />
-       <button onClick={handleRefresh} style={{ position:"relative", right:"25px",bottom:"10px",paddingLeft:"5px",paddingRight:"5px" }}><IoIosRefresh style={{background:"none"}} /></button>
+       <BsArrowRight style={{left:"120px"}} className="SignupArrow2" onClick={Handlerec} />
+       <button className="logout"><TbLogout style={{background: "none",fontSize: "larger"}} /></button>
+       <button onClick={handleRefresh} style={{ position:"relative", right:"35px",bottom:"10px",paddingLeft:"5px",paddingRight:"5px" }}><IoIosRefresh style={{background:"none",fontSize:"larger"}} /></button>
           </div>
         </>
       ) : (
