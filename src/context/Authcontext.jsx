@@ -12,6 +12,6 @@ const [authlang, setauthlang] = useState(null);
 const [authlogin, setauthlogin] = useState(null);
 const [newstate, setnewstate] = useState(false);
  return(<AuthContext.Provider value={{authUser,setauthUser,authpreference,setauthpreference,authlang,setauthlang,authlogin,setauthlogin,newstate,setnewstate}}>
-            {children}
-    </AuthContext.Provider>)
+         {children}
+    </AuthContext.Provider>)            
 };
